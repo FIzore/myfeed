@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MapYourFeed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fcd1d2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .left-panel {
+            width: 20%;
+            display: flex;
+            flex-direction: column;
+        }
+        .button-link {
+            display: inline-block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #f58f8f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 16px;
+        }
+        .button-link:hover {
+            background-color: #f76f6f;
+        }
+        .main-content {
+            width: 75%;
+            background-color: #ffe0e1;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .header img {
+            width: 120px;
+        }
+        .header a {
+            text-decoration: none;
+            font-size: 16px;
+            color: #000;
+            margin: 0 10px;
+        }
+        .goal-section,
+        .input-section,
+        .topics-section,
+        .buttons-section {
+            margin-bottom: 30px;
+        }
+        .goal-section input[type="text"],
+        .input-section input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .goal-section button {
+            padding: 10px 20px;
+            background-color: #f58f8f;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            color: white;
+        }
+        .input-section h2,
+        .topics-section h2 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .topics-section img {
+            width: 100%;
+            max-width: 300px;
+        }
+        .buttons-section a {
+            display: inline-block;
+            padding: 15px 30px;
+            margin-right: 20px;
+            background-color: #f58f8f;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .buttons-section a:hover {
+            background-color: #f76f6f;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Left Panel -->
+    <div class="left-panel">
+        <a href="/" class="button-link">Explore Your Audit</a>
+        <a href="/report" class="button-link">Check Reports</a>
+        <a href="/manual" class="button-link">User Manual</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="header">
+            <img src="logo.png" alt="MapYourFeed Logo">
+            <div>
+                <a href="/login">Sign in</a>
+                <a href="/privacy">About us</a>
+            </div>
+        </div>
+
+        <div class="goal-section">
+            <h2>您的目标是：</h2>
+            <input type="text" value="增加更多职业发展的内容（Time: 2024/09/18)">
+            <button>Set up a goal.</button>
+        </div>
+
+        <div class="input-section">
+            <h2>The total number of posts in your feeds:</h2>
+            <input type="text" value="100">
+            <h2>The total number of posts you viewed:</h2>
+            <input type="text" value="20">
+        </div>
+
+        <div class="topics-section">
+            <h2>The topics in your feeds:</h2>
+            <img src="wordcloud.png" alt="Word Cloud">
+        </div>
+
+        <div class="buttons-section">
+            <a href="generate_report.html">Generate a report</a>
+            <a href="new_audit.html">Start a new audit</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

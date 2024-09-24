@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reset Password - MapYourFeed</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #fcd1d2;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .form-container {
+      background-color: #ffe0e1;
+      padding: 40px;
+      border-radius: 10px;
+      width: 400px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .form-container h2 {
+      color: #f58f8f;
+      margin-bottom: 20px;
+    }
+    .form-container input[type="email"],
+    .form-container input[type="number"],
+    .form-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .form-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #f58f8f;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    .form-container button:hover {
+      background-color: #f76f6f;
+    }
+    .form-container a {
+      display: block;
+      margin-top: 20px;
+      color: #f58f8f;
+      text-decoration: none;
+    }
+    .form-container a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>忘记密码</h2>
+  <form action="/reset_password" method="post">
+    <h1>我们将会发送一封包含重置密码链接的邮件到您的邮箱</h1>
+    <input type="email" name="email" placeholder="邮箱地址" required>
+    <button type="submit">获取验证码</button>
+  </form>
+  <a href="/login">返回登录</a>
+</div>
+
+</body>
+</html>
