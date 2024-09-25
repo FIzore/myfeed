@@ -2,26 +2,26 @@ package routes
 
 import "github.com/gin-gonic/gin"
 
-func login(c *gin.Context) {
+func Login(c *gin.Context) {
 	c.HTML(200, "login.html", nil)
 }
-func register(c *gin.Context) {
+func Register(c *gin.Context) {
 	c.HTML(200, "register.html", nil)
 }
-func reset(c *gin.Context) {
+func Reset(c *gin.Context) {
 	c.HTML(200, "reset.html", nil)
 }
 
-//	r.GET("/", func(c *gin.Context) {
-//		c.HTML(200, "basic.html", nil)
-//
-// })
-func report(c *gin.Context) {
+func Index(c *gin.Context) {
+	c.HTML(200, "index.html", nil)
+
+}
+func Report(c *gin.Context) {
 	c.HTML(200, "report.html", nil)
 }
-func manual(c *gin.Context) {
+func Manual(c *gin.Context) {
 	c.HTML(200, "manual.html", nil)
 }
-func privacy(c *gin.Context) {
+func Privacy(c *gin.Context) {
 	c.HTML(200, "privacy.html", nil)
 }
