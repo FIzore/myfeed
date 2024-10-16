@@ -1,10 +1,12 @@
 package model
 
 import (
+	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/schema"
 	"log"
+	"myfeed/utils"
 	"time"
 )
 
@@ -12,8 +14,12 @@ var db *gorm.DB
 var err error
 
 func InitDB() {
-	//todo 使用ini文件配置数据库
-	dsn := "root:root@tcp(localhost:3306)/myfeed?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?charset=utf8mb4&parseTime=True&loc=Local",
+		utils.DbUser,
+		utils.DbPassword,
+		utils.DbAddress,
+		utils.DbPort,
+		utils.DbName)
 	db, err = gorm.Open(mysql.New(mysql.Config{
 		DSN:               dsn,
 		DefaultStringSize: 256,
@@ -25,6 +31,7 @@ func InitDB() {
 		},
 		DisableForeignKeyConstraintWhenMigrating: true, //不使用外键约束
 	})
+	_ = db.AutoMigrate(&Auditgoals{}, &Accounts{}) //todo 编写数据库
 	if err != nil {
 		log.Fatal("数据库初始化失败", err)
 	}
